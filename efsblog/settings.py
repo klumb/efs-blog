@@ -25,7 +25,7 @@ SECRET_KEY = 'c7cjwv15w0a$k(34fn&l9f@*6p1p3@ehvpow53x@di5qj18f-u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'klumbard.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'kmlumbard.pythonanywhere.com']
 
 
 # Application definition
