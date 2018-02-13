@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mathfilters',
     'django.contrib.humanize',
-    'portfolio'
+    'portfolio',
+    'rest_framework'
 ]
 
 
