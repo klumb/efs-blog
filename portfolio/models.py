@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.conf import settings
 import requests
 
 
@@ -92,4 +93,17 @@ class Stock(models.Model):
         open_price = float(json_data["Time Series (1min)"][mkt_dt]["1. open"])
         share_value = open_price
         return float(share_value) * float(self.shares)
+
+class Profile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    address = models.CharField(max_length=200)
+    city = models.CharField(max_length=50)
+    state = models.CharField(max_length=50)
+    zipcode = models.CharField(max_length=10)
+    cell_phone = models.CharField(max_length=50)
+    active_inactive = models.CharField(max_length=10)
+    created_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return 'Profile for user {}'.format(self.user.username)
 
